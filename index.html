@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Debabrata Samaddar | SQL DBA Portfolio</title>
-  <meta name="description" content="Portfolio of Debabrata Samaddar - SQL DBA, Azure SQL, PostgreSQL, Database Performance Tuning, Backup and Restore, High Availability." />
+  <meta name="description" content="Portfolio of Debabrata Samaddar - SQL DBA, Azure SQL, PostgreSQL, Database Performance Tuning, Backup and Restore, High Availability, Database Migrations." />
   <style>
     :root{
       --bg:#f7f8fc;
@@ -58,7 +58,7 @@
       background:linear-gradient(135deg,var(--primary),var(--primary-2));
       color:#fff;font-weight:800;box-shadow:var(--shadow);
     }
-    .nav-links{display:flex;gap:28px;align-items:center}
+    .nav-links{display:flex;gap:28px;align-items:center;flex-wrap:wrap}
     .nav-links a{font-weight:600;color:var(--muted)}
     .nav-links a:hover,.nav-links a.active{color:var(--text)}
     .menu-btn{display:none}
@@ -180,12 +180,20 @@
     .timeline-item h3{margin:0 0 6px}
     .timeline-item p{margin:0;color:var(--muted)}
 
+    .migration-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .migration-card{padding:24px}
+    .migration-card h3{margin:0 0 8px;font-size:1.15rem}
+    .migration-card .year{display:inline-block;margin-bottom:12px;padding:6px 10px;border-radius:999px;background:var(--surface-2);color:var(--primary);font-weight:800;font-size:.8rem}
+    .migration-card p{margin:0;color:var(--muted)}
+    .diagram{margin-top:18px;background:#0f172a;color:#e5e7eb;border-radius:20px;padding:18px;overflow:auto}
+    .diagram pre{margin:0;font-family:Consolas,monospace;font-size:.92rem;line-height:1.55;white-space:pre-wrap}
+
     .contact-wrap{display:grid;grid-template-columns:1fr .95fr;gap:18px}
     .contact-list{display:grid;gap:14px;margin-top:16px}
     .contact-item{display:flex;gap:14px;align-items:flex-start;padding:16px;border-radius:16px;background:var(--surface-2)}
     .contact-icon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:#fff;border:1px solid var(--border);font-weight:900;color:var(--primary)}
     .contact-item h4{margin:0 0 2px}
-    .contact-item p,.contact-item a{margin:0;color:var(--muted)}
+    .contact-item p,.contact-item a{margin:0;color:var(--muted);word-break:break-word}
     form{display:grid;gap:14px}
     .field{display:grid;gap:8px}
     .field label{font-weight:700}
@@ -199,7 +207,7 @@
     .footer-inner{display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap;border-top:1px solid var(--border);padding-top:24px}
 
     @media (max-width: 980px){
-      .hero-grid,.about-grid,.contact-wrap{grid-template-columns:1fr}
+      .hero-grid,.about-grid,.contact-wrap,.migration-grid{grid-template-columns:1fr}
       .skills-grid,.projects-grid{grid-template-columns:1fr 1fr}
       .hero-art{order:-1;min-height:420px}
     }
@@ -227,6 +235,7 @@
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
+          <a href="#migrations">Migrations</a>
           <a href="#contact">Contact</a>
         </div>
         <a class="btn btn-secondary menu-btn" href="#contact">Hire Me</a>
@@ -238,12 +247,12 @@
     <section class="hero" id="home">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">SQL DBA • Azure • PostgreSQL • Performance Tuning</div>
-          <h1>Building reliable <span class="highlight">database platforms</span> for performance, recovery, and scale.</h1>
-          <p class="lead">I am Debabrata Samaddar, a database professional with hands-on experience in MS SQL Server, Azure SQL Managed Instance, backup and restore, performance tuning, monitoring, and PostgreSQL administration.</p>
+          <div class="eyebrow">SQL DBA • Azure • PostgreSQL • Migrations • Performance Tuning</div>
+          <h1>Designing reliable <span class="highlight">database platforms</span>, migrations, and recovery solutions.</h1>
+          <p class="lead">I am Debabrata Samaddar, a database professional with hands-on experience in MS SQL Server, Azure SQL Managed Instance, database migrations, backup and restore, performance tuning, monitoring, and PostgreSQL administration.</p>
           <div class="cta-row">
             <a class="btn btn-primary" href="#contact">Contact Me</a>
-            <a class="btn btn-secondary" href="#projects">View Projects</a>
+            <a class="btn btn-secondary" target="_blank" href="https://onedrive.live.com/:w:/g/personal/CED9C75332860604/IQDCMLaLDGvISq3C1P0aBkf7AfIo0KEHYRtk7HFK8NsLR_c?resid=CED9C75332860604!s8bb630c26b0c4ac8adc2d4fd1a0647fb&ithint=file%2Cdocx&e=8bs6Xe&migratedtospo=true&redeem=aHR0cHM6Ly8xZHJ2Lm1zL3cvYy9jZWQ5Yzc1MzMyODYwNjA0L0lRRENNTGFMREd2SVNxM0MxUDBhQmtmN0FmSW8wS0VIWVJ0azdIRks4TnNMUl9jP2U9OGJzNlhl">Resume</a>
           </div>
           <div class="stats">
             <div class="stat-card">
@@ -251,12 +260,12 @@
               <p>Years in database operations and support</p>
             </div>
             <div class="stat-card">
-              <h3>SQL</h3>
-              <p>MSSQL, Azure SQL MI, PostgreSQL</p>
+              <h3>2017–2026</h3>
+              <p>Migration experience across SQL, Azure, and infrastructure</p>
             </div>
             <div class="stat-card">
               <h3>Prod</h3>
-              <p>Monitoring, restore, HA/DR, optimization</p>
+              <p>Restore, HA/DR, monitoring, cloud migration</p>
             </div>
           </div>
         </div>
@@ -274,11 +283,12 @@
               <span class="chip">MS SQL Server</span>
               <span class="chip">PostgreSQL</span>
               <span class="chip">Azure SQL MI</span>
+              <span class="chip">Migrations</span>
             </div>
             <div class="mini-panel">
               <div class="mini-item"><span>Specialization</span><strong>Performance Tuning</strong></div>
               <div class="mini-item"><span>Operations</span><strong>Backup, Restore, DR</strong></div>
-              <div class="mini-item"><span>Environment</span><strong>Windows, Azure, Linux</strong></div>
+              <div class="mini-item"><span>Migration Focus</span><strong>Rackspace to Azure</strong></div>
             </div>
           </div>
         </div>
@@ -289,11 +299,11 @@
       <div class="container">
         <div class="section-head">
           <h2>About Me</h2>
-          <p>Database-focused engineer with strong hands-on exposure in SQL Server administration, Azure SQL Managed Instance, PostgreSQL setup, Linux basics, database monitoring, and production support.</p>
+          <p>Database-focused engineer with strong hands-on exposure in SQL Server administration, Azure SQL Managed Instance, PostgreSQL setup, Linux basics, database monitoring, production support, and migration execution.</p>
         </div>
         <div class="about-grid">
           <div class="card pad">
-            <p>I work on database administration, query tuning, backup and recovery, restore validation, health monitoring, and production troubleshooting. I also have exposure to Azure DevOps and have started expanding into PostgreSQL and Linux to grow into a broader multi-platform DBA profile.</p>
+            <p>I work on database administration, query tuning, backup and recovery, restore validation, health monitoring, production troubleshooting, and migration activities. I also have exposure to Azure DevOps and have started expanding into PostgreSQL and Linux to build a broader multi-platform DBA profile.</p>
             <div class="about-points">
               <div class="item">
                 <h4>Production Support</h4>
@@ -301,7 +311,7 @@
               </div>
               <div class="item">
                 <h4>Cloud Exposure</h4>
-                <p>Experience with Azure SQL Managed Instance, storage planning, migration activities, and infrastructure coordination.</p>
+                <p>Experience with Azure SQL Managed Instance, Azure Elastic Pool, storage planning, migration activities, and infrastructure coordination.</p>
               </div>
               <div class="item">
                 <h4>Database Reliability</h4>
@@ -318,8 +328,8 @@
               <div class="timeline-item">
                 <div class="when">Current Focus</div>
                 <div>
-                  <h3>SQL Server + PostgreSQL</h3>
-                  <p>Strengthening multi-database administration profile with practical PostgreSQL setup and remote access configuration.</p>
+                  <h3>SQL Server + PostgreSQL + Cloud Migration</h3>
+                  <p>Strengthening multi-database administration profile with practical PostgreSQL setup, Azure migration work, and custom log shipping design.</p>
                 </div>
               </div>
               <div class="timeline-item">
@@ -333,7 +343,7 @@
                 <div class="when">Environment</div>
                 <div>
                   <h3>Cloud + On-Prem</h3>
-                  <p>Comfortable across Windows servers, IIS, SQL services, Azure environments, and Linux VM-based practice setups.</p>
+                  <p>Comfortable across Windows servers, IIS, SQL services, Azure environments, Rackspace, and Linux VM-based practice setups.</p>
                 </div>
               </div>
             </div>
@@ -346,7 +356,7 @@
       <div class="container">
         <div class="section-head">
           <h2>Skills</h2>
-          <p>A balanced mix of database administration, recovery operations, cloud exposure, and growing cross-platform capabilities.</p>
+          <p>A balanced mix of database administration, migration execution, cloud exposure, and growing cross-platform capabilities.</p>
         </div>
         <div class="skills-grid">
           <div class="card skill-card">
@@ -362,7 +372,7 @@
             <h3>Cloud & Platform</h3>
             <div class="skill-list">
               <div class="skill-pill"><span>Azure SQL MI</span><small>Hands-on</small></div>
-              <div class="skill-pill"><span>Azure Storage</span><small>Working</small></div>
+              <div class="skill-pill"><span>Azure Elastic Pool</span><small>Working</small></div>
               <div class="skill-pill"><span>Windows / IIS</span><small>Practical</small></div>
               <div class="skill-pill"><span>Linux Basics</span><small>Growing</small></div>
             </div>
@@ -372,8 +382,8 @@
             <div class="skill-list">
               <div class="skill-pill"><span>Performance Tuning</span><small>Core</small></div>
               <div class="skill-pill"><span>Monitoring</span><small>Hands-on</small></div>
-              <div class="skill-pill"><span>Log Shipping</span><small>Working</small></div>
-              <div class="skill-pill"><span>PostgreSQL Setup</span><small>Hands-on</small></div>
+              <div class="skill-pill"><span>Log Shipping</span><small>Strong</small></div>
+              <div class="skill-pill"><span>Migration Planning</span><small>Hands-on</small></div>
             </div>
           </div>
         </div>
@@ -427,11 +437,79 @@
       </div>
     </section>
 
+    <section id="migrations">
+      <div class="container">
+        <div class="section-head">
+          <h2>Migration Experience</h2>
+          <p>Hands-on migration exposure across production databases, Azure services, Rackspace infrastructure, and hybrid migration design.</p>
+        </div>
+        <div class="migration-grid">
+          <div class="card migration-card">
+            <span class="year">2017</span>
+            <h3>Production Database Migration using Log Shipping</h3>
+            <p>Migrated a production SQL database using log shipping methodology to ensure minimal downtime and controlled recovery during cutover.</p>
+          </div>
+          <div class="card migration-card">
+            <span class="year">2021</span>
+            <h3>Production SQL Migration to Azure Elastic Pool</h3>
+            <p>Migrated a production SQL database to Azure Elastic Pool using migration tooling, with focus on controlled transition and service continuity.</p>
+          </div>
+          <div class="card migration-card">
+            <span class="year">2025</span>
+            <h3>Rackspace Infrastructure Migration to Azure Cloud</h3>
+            <p>Worked on migration of production, staging, and development infrastructure from Rackspace to Azure Cloud.</p>
+          </div>
+          <div class="card migration-card">
+            <span class="year">2026</span>
+            <h3>Rackspace to Azure Dedicated Host SQL Migration</h3>
+            <p>Migrated SQL production database from Rackspace to Azure Dedicated Host / on-prem SQL using a custom log shipping process and staged DR-style restore sequence.</p>
+          </div>
+        </div>
+        <div class="card pad" style="margin-top:18px">
+          <h3 style="margin-top:0">2026 Custom Log Shipping Diagram</h3>
+          <div class="diagram">
+<pre>PRIMARY SERVER (Rackspace VM)
+--------------------------------
+SQL Server (Ecomtrack DB)
+         │
+         │ 1. Full Backup (.bak) (Manually)
+         │ 2. Log Backup every 15 min (.trn) (Automated)
+         ▼
+Local Backup Folder
+(E:\Ecomtrack_Backup / LOG_Backup)
+         │
+         │ 3. Upload via AzCopy (Automated)
+         ▼
+AZURE BLOB STORAGE
+(ecomtracklogshipping container)
+         │
+         │ 4. Download via AzCopy (15 min job) (Automated)
+         ▼
+SECONDARY SERVER (Azure Dedicated Host)
+----------------------------------------
+Local Folder
+(I:\Log_Shipping\Ecomtrack_Full / Logs)
+         │
+         │ 5. Full Restore (WITH NORECOVERY) (Manually)
+         │ 6. Log Restore (every 15 min) (Automated)
+         ▼
+SQL Server (Ecomtrack_New DB)
+(RESTORING mode - DR standby)</pre>
+          </div>
+        </div>
+        <div class="card migration-card" style="margin-top:18px">
+          <span class="year">2026</span>
+          <h3>Azure Elastic Pool to Azure Dedicated Host / On-Prem SQL</h3>
+          <p>Currently working on migration of Azure Elastic Pool SQL databases to Azure Dedicated Host / on-prem SQL using ADF + CDC based approach.</p>
+        </div>
+      </div>
+    </section>
+
     <section id="contact">
       <div class="container">
         <div class="section-head">
           <h2>Contact</h2>
-          <p>Available for database administration, SQL Server support, PostgreSQL learning projects, and infrastructure-related opportunities.</p>
+          <p>Available for database administration, SQL Server support, PostgreSQL learning projects, and migration-related opportunities.</p>
         </div>
         <div class="contact-wrap">
           <div class="card pad">
@@ -441,21 +519,21 @@
                 <div class="contact-icon">@</div>
                 <div>
                   <h4>Email</h4>
-                  <p>debabrata.samaddar@outlook.com</p>
-                </div>
-              </div>
-              <div class="contact-item">
-                <div class="contact-icon">in</div>
-                <div>
-                  <h4>LinkedIn</h4>
-                  <p>Add your LinkedIn profile link here</p>
+                  <p><a href="mailto:debabrata.samaddar@outlook.com">debabrata.samaddar@outlook.com</a></p>
                 </div>
               </div>
               <div class="contact-item">
                 <div class="contact-icon">CV</div>
                 <div>
                   <h4>Resume</h4>
-                  <p>Add your CV download link here</p>
+                  <p><a target="_blank" href="https://onedrive.live.com/:w:/g/personal/CED9C75332860604/IQDCMLaLDGvISq3C1P0aBkf7AfIo0KEHYRtk7HFK8NsLR_c?resid=CED9C75332860604!s8bb630c26b0c4ac8adc2d4fd1a0647fb&ithint=file%2Cdocx&e=8bs6Xe&migratedtospo=true&redeem=aHR0cHM6Ly8xZHJ2Lm1zL3cvYy9jZWQ5Yzc1MzMyODYwNjA0L0lRRENNTGFMREd2SVNxM0MxUDBhQmtmN0FmSW8wS0VIWVJ0azdIRks4TnNMUl9jP2U9OGJzNlhl">Download Resume</a></p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">SQL</div>
+                <div>
+                  <h4>Focus Area</h4>
+                  <p>SQL Server, Azure SQL, PostgreSQL, Restore & Migration</p>
                 </div>
               </div>
             </div>
